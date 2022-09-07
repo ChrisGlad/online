@@ -221,4 +221,12 @@ void HostUtil::setFirstHost(const Poco::URI& uri)
     }
 }
 
+int HostUtil::getHostListLength() {
+    return hostList.size();
+}
+
+std::string HostUtil::getHostByIndex(int index) {
+    return *next(hostList.begin(),index);
+}
+
 /* vim:set shiftwidth=4 softtabstop=4 expandtab: */

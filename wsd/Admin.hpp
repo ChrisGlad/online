@@ -112,6 +112,8 @@ public:
 
     std::string getLogLines();
 
+    std::string getServerInformation();
+
     void rescheduleMemTimer(unsigned interval);
 
     void rescheduleCpuTimer(unsigned interval);

@@ -30,6 +30,8 @@
 #include <Unit.hpp>
 #include <Util.hpp>
 
+#include <wsd/HostUtil.hpp>
+
 #include <net/Socket.hpp>
 #if ENABLE_SSL
 #include <SslSocket.hpp>
@@ -157,6 +159,11 @@ void AdminSocketHandler::handleMessage(const std::vector<char> &payload)
 
     else if (tokens.equals(0, "log_lines"))
         sendTextFrame("log_lines " + _admin->getLogLines());
+
+    else if (tokens.equals(0, "cluster_diag"))
+
+        sendTextFrame("cluster_diag " + _admin->getServerInformation());//Util::getProcessIdentifier());
+
 
     else if (tokens.equals(0, "kill") && tokens.size() == 2)
     {
@@ -682,6 +689,12 @@ std::string Admin::getLogLines()
     catch (const std::exception& e) {
         return "Could not read the log file.";
     }
+}
+
+std::string Admin::getServerInformation()
+{
+    int val = HostUtil::getHostListLength();
+    return std::to_string(val); //Util::getProcessIdentifier();
 }
 
 AdminModel& Admin::getModel()

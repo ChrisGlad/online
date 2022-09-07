@@ -50,6 +50,10 @@ public:
     static const Poco::URI getNewLockedUri(Poco::URI& uri);
 
     static void setFirstHost(const Poco::URI& uri);
+
+    static int getHostListLength();
+
+    static std::string getHostByIndex(int index);
 };
 
 /* vim:set shiftwidth=4 softtabstop=4 expandtab: */

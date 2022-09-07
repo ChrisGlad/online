@@ -55,6 +55,12 @@ l10nstrings.strCloseModal = _('Close');
 l10nstrings.strUpdateLogLevels = _('Update Log Levels');
 l10nstrings.strVersionInfo = _('Version Information');
 
+l10nstrings.strCluster = _('Cluster Diag');
+l10nstrings.strClusterDiag = _('Diagnose Cluster');
+l10nstrings.strClusterServerConnect = _('Connect to selected node');
+l10nstrings.strClusterSelectNode = _('Select Node:');
+l10nstrings.strClusterSelectCurrent = _('Current Node');
+
 if (module) {
 	module.exports = l10nstrings;
 }
